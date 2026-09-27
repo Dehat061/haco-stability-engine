@@ -1,0 +1,10 @@
+numpy==2.3.5
+scikit-learn==1.8.0
+scipy==1.17.0
+joblib==1.5.3
+threadpoolctl==3.6.0
+PyYAML==6.0.3
+jsonschema==4.26.0
+referencing==0.37.0
+rpds-py==2026.5.1
+attrs==26.1.0

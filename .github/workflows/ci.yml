@@ -1,0 +1,31 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e .
+          python -m pip install pytest
+      - name: Test
+        run: pytest -q
+      - name: Smoke controls
+        run: |
+          haco doctor
+          haco test --config examples/iris_knn_l2.yml --output-dir out-l2
+          haco verify-report out-l2/haco_report.json
+          haco test --config examples/iris_knn_l1.yml --output-dir out-l1
+          haco verify-report out-l1/haco_report.json

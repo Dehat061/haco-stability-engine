@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use HACO Stability Engine, please cite the software and associated paper."
+title: "HACO Stability Engine"
+version: "1.0.0rc3"
+authors:
+  - family-names: "Souza Silva"
+    given-names: "Jaconaazar"
+date-released: "2026-08-27"
+repository-code: "https://github.com/Dehat061/haco-stability-engine"
+# doi: "TO_BE_ADDED_AFTER_ZENODO_ARCHIVAL"

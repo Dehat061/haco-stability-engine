@@ -1,0 +1,32 @@
+run_id: external-user-smoke-iris
+data:
+  kind: sklearn
+  name: iris
+
+split:
+  folds: 3
+  seed: 20260827
+
+preprocessing:
+  kind: center-global-rms
+
+estimator:
+  builtin: knn-l2
+  params:
+    n_neighbors: 5
+
+transformations:
+  family: proper-orthogonal
+  count: 20
+  seed: 20260827
+  orthogonality_tolerance: 1.0e-12
+
+numeric_precision:
+  quantize_decimals: null
+
+policy:
+  expected_relation: invariant
+  max_pfr: 0.0
+
+output:
+  directory: haco-output

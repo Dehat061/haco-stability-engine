@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0-RC3",
+  "protocol": {
+    "name": "HACO Coordinate-Frame Stability Audit",
+    "version": "1.0-RC3"
+  },
+  "run": {
+    "run_id": "external-user-smoke-iris",
+    "timestamp_utc": "2026-08-27T15:16:04.396542+00:00",
+    "engine_version": "1.0.0rc3",
+    "seeds": [
+      20260827,
+      20260827
+    ],
+    "runtime_versions": {
+      "python": "3.13.5",
+      "numpy": "2.3.5",
+      "scikit-learn": "1.8.0",
+      "scipy": "1.17.0",
+      "joblib": "1.5.3",
+      "threadpoolctl": "3.6.0",
+      "PyYAML": "6.0.3",
+      "jsonschema": "4.26.0"
+    }
+  },
+  "object_of_measurement": {
+    "kind": "learning-procedure",
+    "estimator": "builtin:knn-l2",
+    "notes": "Fresh estimator fitted in identity and every transformed frame."
+  },
+  "data": {
+    "datasets": [
+      "sklearn:iris"
+    ],
+    "dataset_fingerprints": {
+      "effective_X_y_sha256": "46981679fa66e4c5fa60e139c3a298ac417c464856c83f0735f8b4c52ac00117"
+    },
+    "split_strategy": "3-fold StratifiedKFold, shuffle=True, seed=20260827",
+    "preprocessing": "center-global-rms"
+  },
+  "transformations": {
+    "family": "proper orthogonal rotations",
+    "count": 20,
+    "strata_count": 3,
+    "total_transform_evaluations": 60,
+    "audit_status": "PASS",
+    "max_orthogonality_error": 8.881784197001252e-16,
+    "min_determinant": 0.9999999999999994
+  },
+  "measurement": {
+    "max_pfr": 0.0,
+    "mean_pfr": 0.0,
+    "median_pfr": 0.0,
+    "nonzero_transformations": 0,
+    "detection_rate": 0.0,
+    "positive_folds": 0,
+    "total_folds": 3,
+    "endpoint": "prediction_flip_rate",
+    "transformation_count": 60,
+    "accuracy_identity_mean": 0.9533333333333333,
+    "accuracy_rotated_min": 0.92,
+    "accuracy_rotated_max": 0.98,
+    "raw_artifact": "transform_results.json"
+  },
+  "policy": {
+    "expected_relation": "invariant",
+    "max_pfr_tolerance": 0.0,
+    "min_pfr_expected": null,
+    "min_detection_rate": null,
+    "min_positive_folds": null,
+    "notes": "User-declared policy."
+  },
+  "decision": "PASS",
+  "limitations": [
+    "RC3 audits refit behavior of supervised fit/predict procedures.",
+    "A mathematically valid coordinate transform may be semantically invalid in some domains.",
+    "Twenty rotations are empirical screening guidance, not a universal guarantee.",
+    "Factory mode executes trusted local Python code and is not a security sandbox."
+  ],
+  "integrity": {
+    "report_sha256": "ded378983201e651a5aae64d25d0385ba668ef637f431e5fe3f976c5ad07285c",
+    "artifact_sha256": {
+      "transform_results.json": "897732374ff2ec83e435ed69f1a5068f14d5a6e5a52ef0a257a72f4b0e84e045"
+    },
+    "config_sha256": "66f74e23c22145cbb18b792773ba604d2b5b065f8982836eefb40a0310833812",
+    "factory_sha256": null
+  }
+}
