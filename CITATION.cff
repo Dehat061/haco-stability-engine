@@ -1,7 +1,9 @@
 cff-version: 1.2.0
 message: "If you use HACO Stability Engine, please cite the software and associated paper."
 title: "HACO Stability Engine"
+type: software
 version: "1.0.0rc3"
+license: BSD-3-Clause
 authors:
   - family-names: "Souza Silva"
     given-names: "Jaconaazar"
