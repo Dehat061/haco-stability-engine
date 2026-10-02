@@ -4,6 +4,7 @@
 
 Reproducibility-hardening release.
 
+- BSD-3-Clause license and packaging metadata added for public release preparation;
 - canonical cloud-sandbox protocol;
 - distinct offline-install path;
 - stricter semantic report schema;

@@ -123,6 +123,6 @@ A SoftwareX manuscript is in preparation. A `CITATION.cff` file is included and 
 
 ## License
 
-**Not yet selected. Do not publish this repository until `LICENSE` has been deliberately chosen.**
+HACO Stability Engine is licensed under the **BSD 3-Clause License**.
 
-The license decision matters for both open-source reuse and any future commercial/patent strategy.
+See [`LICENSE`](LICENSE) for the complete license text.
